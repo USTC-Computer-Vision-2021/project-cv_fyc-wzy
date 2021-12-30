@@ -109,15 +109,15 @@ dst_target = np.maximum(dst1,imageTransform)
 
 - **Input 1:**
 
-![img1](img\img1.jpg)
+![img1](https://github.com/USTC-Computer-Vision-2021/project-cv_fyc-wzy/blob/main/img/img1.jpg)
 
 - **Input2:**
 
-  ![img2](img\img2.jpg)
+  ![img2](https://github.com/USTC-Computer-Vision-2021/project-cv_fyc-wzy/blob/main/img/img2.jpg)
 
 - **Output:**
 
-  ![img3](img\output.jpg)
+  ![img3](https://github.com/USTC-Computer-Vision-2021/project-cv_fyc-wzy/blob/main/img/output.jpg)
 
 ### 运行说明
 
