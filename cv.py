@@ -2,12 +2,19 @@ import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 import matplotlib.gridspec as gridspec
+import argparse
+
+parser = argparse.ArgumentParser(description='Image stitching')
+parser.add_argument('--input_file_1', '-i1', help='输入图片1路径')
+parser.add_argument('--input_file_2', '-i2', help='输入图片1路径')
+parser.add_argument('--output_file', '-o', help='输入图片1路径', default='output.jpg')
+args = parser.parse_args()
 
 GOOD_POINTS_LIMITED = 0.99
 
-img1 = cv.imread('img1.jpg',1)# 全局图像
+img1 = cv.imread(args.input_file_1,1)# 全局图像
 img1 = cv.cvtColor(img1, cv.COLOR_RGB2BGR)
-img2 = cv.imread('img2.jpg',1)# 另一个角度拍摄的局部图像
+img2 = cv.imread(args.input_file_2,1)# 另一个角度拍摄的局部图像
 img2 = cv.cvtColor(img2, cv.COLOR_RGB2BGR)
 # print(img1.shape,img2.shape)
 orb = cv.ORB_create()
@@ -61,5 +68,5 @@ ax = fig.add_subplot(gs[0, 1])
 ax.imshow(img2)
 ax = fig.add_subplot(gs[0, 2])
 ax.imshow(dst_target)
-cv.imwrite('img3.jpg', dst_target)
+cv.imwrite(args.output_file, dst_target)
 plt.show()
